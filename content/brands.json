@@ -1,0 +1,4 @@
+[
+  { "name": "Brand One", "url": "https://example.com", "canDisplayLogo": false },
+  { "name": "Brand Two", "url": "https://example.com", "canDisplayLogo": false }
+]

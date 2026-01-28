@@ -1,4 +1,5 @@
 import Image from "next/image";
+//import services from "@content/services.json";
 
 export default function Home() {
   return (

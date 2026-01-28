@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Product Demo Example",
+    "platform": "tiktok",
+    "url": "https://www.tiktok.com/@handle/video/0000000000000000000",
+    "tags": ["demo", "tiktok-shop"],
+    "note": "High-retention hook + clear benefit framing.",
+    "metrics": { "views": 0, "clicks": 0 }
+  }
+]
