@@ -1,0 +1,16 @@
+name: Deploy (dev -> home server)
+
+on:
+  push:
+    branches: ["dev"]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and restart
+        run: |
+          docker compose up -d --build
+          docker image prune -f
