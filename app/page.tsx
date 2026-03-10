@@ -1,66 +1,287 @@
-import Image from "next/image";
-//import services from "@content/services.json";
+// app/page.tsx
+import Link from "next/link";
 
-export default function Home() {
+const PARTNER_BRANDS = [
+  "Xiaomi",
+  "Anker",
+  "Lefant",
+  "Halara",
+  "GoPlus",
+  "EcoLife",
+  "Philips",
+  "Umay",
+];
+
+const RESTRICTED_PRODUCTS = ["18+", "Guns", "Vapes / harmful substances"];
+
+const SERVICES_COMPANIES = [
+  "Growth & GMV maximization",
+  "Content upload (if required)",
+  "Account management (optional)",
+  "Affiliate link setup",
+  "Creator sourcing & coordination",
+];
+
+const SERVICES_CREATORS = [
+  "Helping creators grow with TikTok Shop",
+  "Connecting creators with suitable brands and campaigns",
+  "GMV-focused guidance and program support",
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="py-14">
+      {/* Hero */}
+      <section className="px-4 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <div className="space-y-3">
+                <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+                  cyrixtlshop
+                </h1>
+                <p className="text-lg text-zinc-700">
+                  Agency for TikTok Shop growth — helping brands and creators
+                  maximize GMV through performance-first content and affiliate
+                  execution.
+                </p>
+                <p className="text-sm text-zinc-600">
+                  One-liner: <span className="font-medium text-zinc-800">I help</span>{" "}
+                  <span className="font-medium text-zinc-800">XXXXXX</span>{" "}
+                  brands sell <span className="font-medium text-zinc-800">XXXXXX</span>{" "}
+                  via TikTok Shop by{" "}
+                  <span className="font-medium text-zinc-800">XXXXXX</span>.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
+                >
+                  Contact
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
+                >
+                  View portfolio
+                </Link>
+              </div>
+            </div>
+
+            {/* Quick meta row */}
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
+                <div className="text-xs font-semibold text-zinc-500">Region / Language</div>
+                <div className="mt-1 text-sm text-zinc-800">
+                  Germany (DE) • Brand dependent audiences (mixed)
+                </div>
+              </div>
+              <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
+                <div className="text-xs font-semibold text-zinc-500">Response time</div>
+                <div className="mt-1 text-sm text-zinc-800">Within 24h</div>
+              </div>
+              <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
+                <div className="text-xs font-semibold text-zinc-500">Publishable metrics</div>
+                <div className="mt-1 text-sm text-zinc-800">XXXXXX</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner brands */}
+      <section className="mt-10 px-4 sm:px-8">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <h2 className="text-xl font-semibold tracking-tight">Partner brands</h2>
+            <p className="text-sm text-zinc-600">
+              Logos pending / permission-based. Display as text for now.
+            </p>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {PARTNER_BRANDS.map((b) => (
+              <span
+                key={b}
+                className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm text-zinc-800"
+              >
+                {b}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What we do */}
+      <section className="mt-10 px-4 sm:px-8">
+        <div className="mx-auto max-w-5xl grid gap-6 md:grid-cols-2">
+          <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+            <h2 className="text-xl font-semibold tracking-tight">For companies</h2>
+            <p className="mt-2 text-sm text-zinc-600">
+              We focus on GMV growth and operational execution inside TikTok Shop.
+            </p>
+            <ul className="mt-5 space-y-2 text-sm text-zinc-800">
+              {SERVICES_COMPANIES.map((s) => (
+                <li key={s} className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-zinc-400" />
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 text-sm text-zinc-700">
+              <div className="font-semibold text-zinc-900">Deliverables</div>
+              <div className="mt-1">
+                Unlimited on a negotiated basis (VB). Preparation time ~1 week +
+                product shipping time.
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+            <h2 className="text-xl font-semibold tracking-tight">For creators</h2>
+            <p className="mt-2 text-sm text-zinc-600">
+              We help creators grow and connect with brands through TikTok Shop.
+            </p>
+            <ul className="mt-5 space-y-2 text-sm text-zinc-800">
+              {SERVICES_CREATORS.map((s) => (
+                <li key={s} className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-zinc-400" />
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 text-sm text-zinc-700">
+              <div className="font-semibold text-zinc-900">Notes</div>
+              <div className="mt-1">
+                Platform compliance: TikTok Shop EU guidelines. No logo theft.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio + Metrics placeholders */}
+      <section className="mt-10 px-4 sm:px-8">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+          <h2 className="text-xl font-semibold tracking-tight">Portfolio</h2>
+          <p className="mt-2 text-sm text-zinc-600">
+            Best posts and performance breakdowns will be added as they are produced.
           </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Best posts</div>
+              <div className="mt-2 text-sm text-zinc-800">XXXXXX (links coming soon)</div>
+            </div>
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Case studies</div>
+              <div className="mt-2 text-sm text-zinc-800">XXXXXX (2–4 planned)</div>
+            </div>
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Metrics</div>
+              <div className="mt-2 text-sm text-zinc-800">
+                XXXXXX (views / CTR / conversion / GMV etc.)
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/portfolio"
+              className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
+            >
+              Go to portfolio
+            </Link>
+            <Link
+              href="/results"
+              className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
+            >
+              View results
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Pricing snapshot */}
+      <section className="mt-10 px-4 sm:px-8">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+          <h2 className="text-xl font-semibold tracking-tight">Pricing (snapshot)</h2>
+          <p className="mt-2 text-sm text-zinc-600">
+            Final offers depend on product category, goals, and scale. Management is negotiable.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Livestream</div>
+              <div className="mt-2 text-sm text-zinc-800">€50 / hour</div>
+            </div>
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Video</div>
+              <div className="mt-2 text-sm text-zinc-800">€80 / hour</div>
+            </div>
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Management</div>
+              <div className="mt-2 text-sm text-zinc-800">VB (negotiable)</div>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Brand fit / restrictions */}
+      <section className="mt-10 px-4 sm:px-8">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+          <h2 className="text-xl font-semibold tracking-tight">Brand fit</h2>
+          <p className="mt-2 text-sm text-zinc-600">
+            We support a broad range of product categories. We do not promote restricted items.
+          </p>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {RESTRICTED_PRODUCTS.map((x) => (
+              <span
+                key={x}
+                className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm text-zinc-800"
+              >
+                {x}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mt-10 px-4 pb-10 sm:px-8">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+          <h2 className="text-xl font-semibold tracking-tight">Work with us</h2>
+          <p className="mt-2 text-sm text-zinc-600">
+            Tell us about your product, timeline, and targets — we respond within 24h.
+          </p>
+
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/contact"
+              className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
+            >
+              Contact
+            </Link>
+            <a
+              href="https://www.tiktok.com/@cyrixtlshop"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
+            >
+              TikTok
+            </a>
+          </div>
+
+          <div className="mt-6 text-xs text-zinc-500">
+            Contact method placeholders: Email (XXXXXX), Form (XXXXXX), Calendar (XXXXXX)
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
