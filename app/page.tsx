@@ -20,7 +20,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="space-y-3">
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                cyrixtlshop
+                cyrixtlshoptest12
               </h1>
 
               <p className="text-lg text-zinc-700">
