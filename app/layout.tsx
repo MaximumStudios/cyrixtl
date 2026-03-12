@@ -19,7 +19,7 @@ const CONTACT = {
     "10115 Berlin",
     "Germany",
   ],
-  tiktokUrl: "https://www.tiktok.com/@cyrixtlshop",
+  tiktokUrl: "https://www.tiktok.com/@cyrixtl",
 };
 
 const NAV_LINKS: Array<{ href: string; label: string }> = [

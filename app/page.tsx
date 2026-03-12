@@ -1,91 +1,73 @@
-// app/page.tsx
 import Link from "next/link";
-
-const PARTNER_BRANDS = [
-  "Xiaomi",
-  "Anker",
-  "Lefant",
-  "Halara",
-  "GoPlus",
-  "EcoLife",
-  "Philips",
-  "Umay",
-];
-
-const RESTRICTED_PRODUCTS = ["18+", "Guns", "Vapes / harmful substances"];
-
-const SERVICES_COMPANIES = [
-  "Growth & GMV maximization",
-  "Content upload (if required)",
-  "Account management (optional)",
-  "Affiliate link setup",
-  "Creator sourcing & coordination",
-];
-
-const SERVICES_CREATORS = [
-  "Helping creators grow with TikTok Shop",
-  "Connecting creators with suitable brands and campaigns",
-  "GMV-focused guidance and program support",
-];
+import FeaturedVideosCarousel from "@/components/FeaturedVideosCarousel";
+import {
+  FEATURED_VIDEOS,
+  PARTNER_BRANDS,
+  RESTRICTED_PRODUCTS,
+  SERVICES_COMPANIES,
+  SERVICES_CREATORS,
+} from "@/content/home";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div className="py-14">
+    <div className="py-0">
+      <FeaturedVideosCarousel videos={FEATURED_VIDEOS} />
+
       {/* Hero */}
       <section className="px-4 sm:px-8">
-        <div className="mx-auto max-w-5xl">
-          <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
-            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-              <div className="space-y-3">
-                <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                  cyrixtlshop
-                </h1>
-                <p className="text-lg text-zinc-700">
-                  Agency for TikTok Shop growth — helping brands and creators
-                  maximize GMV through performance-first content and affiliate
-                  execution.
-                </p>
-                <p className="text-sm text-zinc-600">
-                  One-liner: <span className="font-medium text-zinc-800">I help</span>{" "}
-                  <span className="font-medium text-zinc-800">XXXXXX</span>{" "}
-                  brands sell <span className="font-medium text-zinc-800">XXXXXX</span>{" "}
-                  via TikTok Shop by{" "}
-                  <span className="font-medium text-zinc-800">XXXXXX</span>.
-                </p>
-              </div>
+        <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-3">
+              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+                cyrixtlshop
+              </h1>
 
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
-                >
-                  Contact
-                </Link>
-                <Link
-                  href="/portfolio"
-                  className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
-                >
-                  View portfolio
-                </Link>
+              <p className="text-lg text-zinc-700">
+                Agency for TikTok Shop growth — helping brands and creators maximize
+                GMV through performance-first content and affiliate execution.
+              </p>
+
+              <p className="text-sm text-zinc-600">
+                One-liner: <span className="font-medium text-zinc-800">I help</span>{" "}
+                <span className="font-medium text-zinc-800">XXXXXX</span> brands sell{" "}
+                <span className="font-medium text-zinc-800">XXXXXX</span> via TikTok
+                Shop by <span className="font-medium text-zinc-800">XXXXXX</span>.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/contact"
+                className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
+              >
+                Contact
+              </Link>
+              <Link
+                href="/portfolio"
+                className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
+              >
+                View portfolio
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Region / Language</div>
+              <div className="mt-1 text-sm text-zinc-800">
+                Germany (DE) • Brand dependent audiences (mixed)
               </div>
             </div>
 
-            {/* Quick meta row */}
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
-                <div className="text-xs font-semibold text-zinc-500">Region / Language</div>
-                <div className="mt-1 text-sm text-zinc-800">
-                  Germany (DE) • Brand dependent audiences (mixed)
-                </div>
-              </div>
-              <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
-                <div className="text-xs font-semibold text-zinc-500">Response time</div>
-                <div className="mt-1 text-sm text-zinc-800">Within 24h</div>
-              </div>
-              <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
-                <div className="text-xs font-semibold text-zinc-500">Publishable metrics</div>
-                <div className="mt-1 text-sm text-zinc-800">XXXXXX</div>
-              </div>
+            <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Response time</div>
+              <div className="mt-1 text-sm text-zinc-800">Within 24h</div>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-200/70 bg-white p-4">
+              <div className="text-xs font-semibold text-zinc-500">Publishable metrics</div>
+              <div className="mt-1 text-sm text-zinc-800">XXXXXX</div>
             </div>
           </div>
         </div>
@@ -93,40 +75,41 @@ export default function HomePage() {
 
       {/* Partner brands */}
       <section className="mt-10 px-4 sm:px-8">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <h2 className="text-xl font-semibold tracking-tight">Partner brands</h2>
-            <p className="text-sm text-zinc-600">
-              Logos pending / permission-based. Display as text for now.
-            </p>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-2">
-            {PARTNER_BRANDS.map((b) => (
-              <span
-                key={b}
-                className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm text-zinc-800"
-              >
-                {b}
-              </span>
-            ))}
-          </div>
+      <div className="rounded-3xl border border-zinc-200/50 bg-white/50 p-8 shadow-sm backdrop-blur">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <h2 className="text-xl font-semibold tracking-tight">Partner brands</h2>
+          <p className="text-sm text-zinc-600">Selected partner brands.</p>
         </div>
-      </section>
+
+        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-6 sm:gap-x-10 lg:gap-x-12">
+          {PARTNER_BRANDS.map((brand) => (
+            <div key={brand.name} className="relative h-12 w-28 sm:h-14 sm:w-32 lg:h-16 lg:w-36">
+              <Image
+                src={brand.logo}
+                alt={brand.name}
+                fill
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
       {/* What we do */}
       <section className="mt-10 px-4 sm:px-8">
-        <div className="mx-auto max-w-5xl grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
             <h2 className="text-xl font-semibold tracking-tight">For companies</h2>
             <p className="mt-2 text-sm text-zinc-600">
               We focus on GMV growth and operational execution inside TikTok Shop.
             </p>
+
             <ul className="mt-5 space-y-2 text-sm text-zinc-800">
-              {SERVICES_COMPANIES.map((s) => (
-                <li key={s} className="flex gap-2">
+              {SERVICES_COMPANIES.map((service) => (
+                <li key={service} className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-zinc-400" />
-                  <span>{s}</span>
+                  <span>{service}</span>
                 </li>
               ))}
             </ul>
@@ -145,11 +128,12 @@ export default function HomePage() {
             <p className="mt-2 text-sm text-zinc-600">
               We help creators grow and connect with brands through TikTok Shop.
             </p>
+
             <ul className="mt-5 space-y-2 text-sm text-zinc-800">
-              {SERVICES_CREATORS.map((s) => (
-                <li key={s} className="flex gap-2">
+              {SERVICES_CREATORS.map((service) => (
+                <li key={service} className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-zinc-400" />
-                  <span>{s}</span>
+                  <span>{service}</span>
                 </li>
               ))}
             </ul>
@@ -164,9 +148,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Portfolio + Metrics placeholders */}
+      {/* Portfolio + metrics placeholders */}
       <section className="mt-10 px-4 sm:px-8">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+        <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
           <h2 className="text-xl font-semibold tracking-tight">Portfolio</h2>
           <p className="mt-2 text-sm text-zinc-600">
             Best posts and performance breakdowns will be added as they are produced.
@@ -177,10 +161,12 @@ export default function HomePage() {
               <div className="text-xs font-semibold text-zinc-500">Best posts</div>
               <div className="mt-2 text-sm text-zinc-800">XXXXXX (links coming soon)</div>
             </div>
+
             <div className="rounded-2xl border border-zinc-200 bg-white p-4">
               <div className="text-xs font-semibold text-zinc-500">Case studies</div>
               <div className="mt-2 text-sm text-zinc-800">XXXXXX (2–4 planned)</div>
             </div>
+
             <div className="rounded-2xl border border-zinc-200 bg-white p-4">
               <div className="text-xs font-semibold text-zinc-500">Metrics</div>
               <div className="mt-2 text-sm text-zinc-800">
@@ -208,10 +194,11 @@ export default function HomePage() {
 
       {/* Pricing snapshot */}
       <section className="mt-10 px-4 sm:px-8">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+        <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
           <h2 className="text-xl font-semibold tracking-tight">Pricing (snapshot)</h2>
           <p className="mt-2 text-sm text-zinc-600">
-            Final offers depend on product category, goals, and scale. Management is negotiable.
+            Final offers depend on product category, goals, and scale. Management is
+            negotiable.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -219,10 +206,12 @@ export default function HomePage() {
               <div className="text-xs font-semibold text-zinc-500">Livestream</div>
               <div className="mt-2 text-sm text-zinc-800">€50 / hour</div>
             </div>
+
             <div className="rounded-2xl border border-zinc-200 bg-white p-4">
               <div className="text-xs font-semibold text-zinc-500">Video</div>
               <div className="mt-2 text-sm text-zinc-800">€80 / hour</div>
             </div>
+
             <div className="rounded-2xl border border-zinc-200 bg-white p-4">
               <div className="text-xs font-semibold text-zinc-500">Management</div>
               <div className="mt-2 text-sm text-zinc-800">VB (negotiable)</div>
@@ -233,19 +222,20 @@ export default function HomePage() {
 
       {/* Brand fit / restrictions */}
       <section className="mt-10 px-4 sm:px-8">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+        <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
           <h2 className="text-xl font-semibold tracking-tight">Brand fit</h2>
           <p className="mt-2 text-sm text-zinc-600">
-            We support a broad range of product categories. We do not promote restricted items.
+            We support a broad range of product categories. We do not promote restricted
+            items.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
-            {RESTRICTED_PRODUCTS.map((x) => (
+            {RESTRICTED_PRODUCTS.map((item) => (
               <span
-                key={x}
+                key={item}
                 className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm text-zinc-800"
               >
-                {x}
+                {item}
               </span>
             ))}
           </div>
@@ -254,7 +244,7 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="mt-10 px-4 pb-10 sm:px-8">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
+        <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
           <h2 className="text-xl font-semibold tracking-tight">Work with us</h2>
           <p className="mt-2 text-sm text-zinc-600">
             Tell us about your product, timeline, and targets — we respond within 24h.
@@ -268,7 +258,7 @@ export default function HomePage() {
               Contact
             </Link>
             <a
-              href="https://www.tiktok.com/@cyrixtlshop"
+              href="https://www.tiktok.com/@cyrixtl"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
@@ -278,7 +268,8 @@ export default function HomePage() {
           </div>
 
           <div className="mt-6 text-xs text-zinc-500">
-            Contact method placeholders: Email (XXXXXX), Form (XXXXXX), Calendar (XXXXXX)
+            Contact method placeholders: Email (XXXXXX), Form (XXXXXX), Calendar
+            (XXXXXX)
           </div>
         </div>
       </section>
