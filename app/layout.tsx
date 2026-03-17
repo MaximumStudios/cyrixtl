@@ -3,20 +3,21 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata = {
-  title: "cyrixtlshop",
+  title: "Linkup Studios",
   description: "TikTok Shop affiliate & creator partnerships.",
 };
 
-const BRAND = "cyrixtlshop";
+const BRAND = "Linkup Studios";
 
 // TODO: Replace placeholders with real details later
 const CONTACT = {
-  email: "hello@cyrixtlshop.com",
-  phone: "+49 000 0000000",
+  email: "cyrixtlcyrixtl@gmail.com",
+  phone: "+491629129923",
   addressLines: [
-    "cyrixtlshop",
-    "PO Box 1234",
-    "10115 Berlin",
+    "Linkup Studios",
+    "Jordan-Lee Tessmann",
+    "Erwin-Rommel Straße 30",
+    "40470 Düsseldorf",
     "Germany",
   ],
   tiktokUrl: "https://www.tiktok.com/@cyrixtl",
@@ -90,7 +91,7 @@ export default function RootLayout({
           <div className="grid gap-10 px-4 py-10 sm:px-8 md:grid-cols-3">
             {/* Brand */}
             <div className="space-y-2">
-              <div className="text-base font-semibold">{BRAND}</div>
+              <div className="text-base text-zinc-600 font-semibold">{BRAND}</div>
               <p className="text-sm text-zinc-600">
                 TikTok Shop affiliate content & creator partnerships.
               </p>

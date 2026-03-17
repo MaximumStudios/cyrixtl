@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FeaturedVideosCarousel from "@/components/FeaturedVideosCarousel";
+import PartnerBrandsMarquee from "@/components/PartnerBrandsMarquee";
 import {
   FEATURED_VIDEOS,
   PARTNER_BRANDS,
@@ -11,21 +12,20 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div className="py-0">
-      <FeaturedVideosCarousel videos={FEATURED_VIDEOS} />
-
+    <div className="py-10">
+      
       {/* Hero */}
       <section className="px-4 sm:px-8">
         <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-8 shadow-sm backdrop-blur">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="space-y-3">
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                cyrixtlshoptest12
+                Linkup Studios
               </h1>
 
               <p className="text-lg text-zinc-700">
-                Agency for TikTok Shop growth — helping brands and creators maximize
-                GMV through performance-first content and affiliate execution.
+                Agency for TikTok Shop growth, helping brands and creators maximize
+                GMV through performance-first content, and affiliate execution.
               </p>
 
               <p className="text-sm text-zinc-600">
@@ -73,28 +73,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partner brands */}
-      <section className="mt-10 px-4 sm:px-8">
-      <div className="rounded-3xl border border-zinc-200/50 bg-white/50 p-8 shadow-sm backdrop-blur">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-xl font-semibold tracking-tight">Partner brands</h2>
-          <p className="text-sm text-zinc-600">Selected partner brands.</p>
-        </div>
+      {/* Featured videos */}
+      <FeaturedVideosCarousel videos={FEATURED_VIDEOS} />
 
-        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-6 sm:gap-x-10 lg:gap-x-12">
-          {PARTNER_BRANDS.map((brand) => (
-            <div key={brand.name} className="relative h-12 w-28 sm:h-14 sm:w-32 lg:h-16 lg:w-36">
-              <Image
-                src={brand.logo}
-                alt={brand.name}
-                fill
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      {/* Partner brands */}
+      <PartnerBrandsMarquee brands={PARTNER_BRANDS} />
 
       {/* What we do */}
       <section className="mt-10 px-4 sm:px-8">
@@ -253,7 +236,7 @@ export default function HomePage() {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-zinc-800"
+              className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-200"
             >
               Contact
             </Link>
@@ -261,7 +244,7 @@ export default function HomePage() {
               href="https://www.tiktok.com/@cyrixtl"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
+              className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-200"
             >
               TikTok
             </a>
