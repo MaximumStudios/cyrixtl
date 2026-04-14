@@ -14,7 +14,7 @@ const CONTACT = {
   email: "cyrixtlcyrixtl@gmail.com",
   phone: "+491629129923",
   addressLines: [
-    "Linkup Studios",
+    "Retard Studios",
     "Jordan-Lee Tessmann",
     "Erwin-Rommel Straße 30",
     "40470 Düsseldorf",
