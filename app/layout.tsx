@@ -3,7 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata = {
-  title: "cyrixtlshop",
+  title: "41414141",
   description: "TikTok Shop affiliate & creator partnerships.",
 };
 
