@@ -23,6 +23,19 @@ code, pre {
   }
 }
 
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-brand-marquee {
+  animation: brand-marquee 28s linear infinite;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
