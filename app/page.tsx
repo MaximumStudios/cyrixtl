@@ -36,13 +36,13 @@ export default function HomePage() {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-full border border-black/15 px-5 py-2.5 text-sm font-medium text-black hover:bg-black/5"
+              className="rounded-full bg-[#FE2C55] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#E0264C]"
             >
               Contact
             </Link>
             <Link
               href="/portfolio"
-              className="rounded-full bg-[#1F3D2B] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#183021]"
+              className="rounded-full bg-[#25F4EE] px-5 py-2.5 text-sm font-medium text-black hover:bg-[#1DD9D4]"
             >
               View portfolio
             </Link>
@@ -247,7 +247,7 @@ export default function HomePage() {
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/contact"
-            className="rounded-full bg-[#1F3D2B] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#183021]"
+            className="rounded-full bg-[#25F4EE] px-5 py-2.5 text-sm font-medium text-black hover:bg-[#1DD9D4]"
           >
             Contact
           </Link>
@@ -255,7 +255,7 @@ export default function HomePage() {
             href="https://www.tiktok.com/@cyrixtl"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-black/15 px-5 py-2.5 text-sm font-medium text-black hover:bg-black/5"
+            className="rounded-full bg-[#FE2C55] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#E0264C]"
           >
             TikTok
           </a>

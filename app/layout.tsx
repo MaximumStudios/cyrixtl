@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen bg-[#F4F4F5] text-black">
         {/* Top bar */}
-        <header className="sticky top-0 z-50 bg-[#1F3D2B]">
+        <header className="sticky top-0 z-50 bg-black">
           <div className="flex items-center justify-between px-4 py-3 sm:px-8">
             <Link
               href="/"
@@ -77,7 +77,7 @@ export default function RootLayout({
         <main className="min-h-[70vh] px-4 sm:px-8">{children}</main>
 
         {/* Footer */}
-        <footer className="mt-16 bg-[#1F3D2B]">
+        <footer className="mt-16 bg-black">
           <div className="grid gap-10 px-4 py-10 sm:px-8 md:grid-cols-3">
             {/* Brand */}
             <div className="space-y-2">
