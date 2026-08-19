@@ -26,10 +26,9 @@ export default function HomePage() {
             </p>
 
             <p className="text-sm text-zinc-600">
-              One-liner: <span className="font-medium text-zinc-800">I help</span>{" "}
-              <span className="font-medium text-zinc-800">XXXXXX</span> brands sell{" "}
-              <span className="font-medium text-zinc-800">XXXXXX</span> via TikTok
-              Shop by <span className="font-medium text-zinc-800">XXXXXX</span>.
+              I help consumer product brands sell more via TikTok Shop by
+              combining performance-first content, livestream selling, and a
+              vetted creator network.
             </p>
           </div>
 
