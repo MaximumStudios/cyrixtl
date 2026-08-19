@@ -42,7 +42,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/portfolio"
-              className="rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800"
+              className="rounded-full bg-[#1F3D2B] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#183021]"
             >
               View portfolio
             </Link>
@@ -247,7 +247,7 @@ export default function HomePage() {
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/contact"
-            className="rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800"
+            className="rounded-full bg-[#1F3D2B] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#183021]"
           >
             Contact
           </Link>

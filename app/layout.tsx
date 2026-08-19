@@ -35,13 +35,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#FAF3E4] text-black">
+      <body className="min-h-screen bg-[#F4F4F5] text-black">
         {/* Top bar */}
-        <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FAF3E4]/90 backdrop-blur">
+        <header className="sticky top-0 z-50 bg-[#1F3D2B]">
           <div className="flex items-center justify-between px-4 py-3 sm:px-8">
             <Link
               href="/"
-              className="text-lg font-semibold tracking-tight hover:opacity-90"
+              className="text-lg font-semibold tracking-tight text-white hover:opacity-90"
             >
               {BRAND}
             </Link>
@@ -51,14 +51,14 @@ export default function RootLayout({
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="text-sm text-zinc-700 hover:text-black"
+                  className="text-sm text-white/75 hover:text-white"
                 >
                   {l.label}
                 </Link>
               ))}
               <Link
                 href="/contact"
-                className="rounded-full border border-black/15 px-4 py-2 text-sm font-medium text-black hover:bg-black/5"
+                className="rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-white hover:bg-white/10"
               >
                 Contact
               </Link>
@@ -67,7 +67,7 @@ export default function RootLayout({
             {/* Mobile menu fallback (simple) */}
             <Link
               href="/contact"
-              className="md:hidden rounded-full border border-black/15 px-4 py-2 text-sm font-medium text-black hover:bg-black/5"
+              className="md:hidden rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-white hover:bg-white/10"
             >
               Contact
             </Link>
@@ -77,28 +77,28 @@ export default function RootLayout({
         <main className="min-h-[70vh] px-4 sm:px-8">{children}</main>
 
         {/* Footer */}
-        <footer className="mt-16 border-t border-black/10 bg-[#FAF3E4]">
+        <footer className="mt-16 bg-[#1F3D2B]">
           <div className="grid gap-10 px-4 py-10 sm:px-8 md:grid-cols-3">
             {/* Brand */}
             <div className="space-y-2">
-              <div className="text-base text-zinc-600 font-semibold">{BRAND}</div>
-              <p className="text-sm text-zinc-600">
+              <div className="text-base text-white/80 font-semibold">{BRAND}</div>
+              <p className="text-sm text-white/60">
                 TikTok Shop affiliate content & creator partnerships.
               </p>
             </div>
 
             {/* Contact */}
             <div className="space-y-2">
-              <div className="text-sm font-semibold text-black">Contact</div>
-              <div className="text-sm text-zinc-700">
+              <div className="text-sm font-semibold text-white">Contact</div>
+              <div className="text-sm text-white/75">
                 <div>
-                  <span className="text-zinc-500">Email:</span>{" "}
+                  <span className="text-white/50">Email:</span>{" "}
                   <a className="hover:underline" href={`mailto:${CONTACT.email}`}>
                     {CONTACT.email}
                   </a>
                 </div>
                 <div>
-                  <span className="text-zinc-500">Phone:</span>{" "}
+                  <span className="text-white/50">Phone:</span>{" "}
                   <a className="hover:underline" href={`tel:${CONTACT.phone}`}>
                     {CONTACT.phone}
                   </a>
@@ -108,8 +108,8 @@ export default function RootLayout({
 
             {/* Address + Social */}
             <div className="space-y-2">
-              <div className="text-sm font-semibold text-black">Address</div>
-              <address className="not-italic text-sm text-zinc-700">
+              <div className="text-sm font-semibold text-white">Address</div>
+              <address className="not-italic text-sm text-white/75">
                 {CONTACT.addressLines.map((line) => (
                   <div key={line}>{line}</div>
                 ))}
@@ -117,7 +117,7 @@ export default function RootLayout({
 
               <div className="pt-3 text-sm">
                 <a
-                  className="text-zinc-700 hover:text-black hover:underline"
+                  className="text-white/75 hover:text-white hover:underline"
                   href={CONTACT.tiktokUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -128,13 +128,13 @@ export default function RootLayout({
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 border-t border-black/10 px-4 py-6 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <div className="flex flex-col gap-3 border-t border-white/10 px-4 py-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between sm:px-8">
             <div>© {new Date().getFullYear()} {BRAND}. All rights reserved.</div>
             <div className="flex gap-4">
-              <Link className="hover:text-black hover:underline" href="/impressum">
+              <Link className="hover:text-white hover:underline" href="/impressum">
                 Impressum
               </Link>
-              <Link className="hover:text-black hover:underline" href="/datenschutz">
+              <Link className="hover:text-white hover:underline" href="/datenschutz">
                 Datenschutzerklärung
               </Link>
             </div>
