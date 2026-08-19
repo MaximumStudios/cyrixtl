@@ -35,19 +35,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-zinc-900">
-        {/* Background wash */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 -z-10"
-        >
-          <div className="absolute -top-40 left-[-10%] h-[520px] w-[520px] rounded-full bg-sky-200/30 blur-3xl" />
-          <div className="absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-violet-200/25 blur-3xl" />
-          <div className="absolute bottom-[-260px] left-1/2 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-zinc-200/30 blur-3xl" />
-        </div>
-
+      <body className="min-h-screen bg-[#FAF3E4] text-black">
         {/* Top bar */}
-        <header className="sticky top-0 z-50 border-b border-zinc-200/60 bg-white/70 backdrop-blur">
+        <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FAF3E4]/90 backdrop-blur">
           <div className="flex items-center justify-between px-4 py-3 sm:px-8">
             <Link
               href="/"
@@ -61,14 +51,14 @@ export default function RootLayout({
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="text-sm text-zinc-700 hover:text-zinc-900"
+                  className="text-sm text-zinc-700 hover:text-black"
                 >
                   {l.label}
                 </Link>
               ))}
               <Link
                 href="/contact"
-                className="rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
+                className="rounded-full border border-black/15 px-4 py-2 text-sm font-medium text-black hover:bg-black/5"
               >
                 Contact
               </Link>
@@ -77,7 +67,7 @@ export default function RootLayout({
             {/* Mobile menu fallback (simple) */}
             <Link
               href="/contact"
-              className="md:hidden rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50"
+              className="md:hidden rounded-full border border-black/15 px-4 py-2 text-sm font-medium text-black hover:bg-black/5"
             >
               Contact
             </Link>
@@ -87,7 +77,7 @@ export default function RootLayout({
         <main className="min-h-[70vh] px-4 sm:px-8">{children}</main>
 
         {/* Footer */}
-        <footer className="mt-16 border-t border-zinc-200/60 bg-white">
+        <footer className="mt-16 border-t border-black/10 bg-[#FAF3E4]">
           <div className="grid gap-10 px-4 py-10 sm:px-8 md:grid-cols-3">
             {/* Brand */}
             <div className="space-y-2">
@@ -99,7 +89,7 @@ export default function RootLayout({
 
             {/* Contact */}
             <div className="space-y-2">
-              <div className="text-sm font-semibold text-zinc-900">Contact</div>
+              <div className="text-sm font-semibold text-black">Contact</div>
               <div className="text-sm text-zinc-700">
                 <div>
                   <span className="text-zinc-500">Email:</span>{" "}
@@ -118,7 +108,7 @@ export default function RootLayout({
 
             {/* Address + Social */}
             <div className="space-y-2">
-              <div className="text-sm font-semibold text-zinc-900">Address</div>
+              <div className="text-sm font-semibold text-black">Address</div>
               <address className="not-italic text-sm text-zinc-700">
                 {CONTACT.addressLines.map((line) => (
                   <div key={line}>{line}</div>
@@ -127,7 +117,7 @@ export default function RootLayout({
 
               <div className="pt-3 text-sm">
                 <a
-                  className="text-zinc-700 hover:text-zinc-900 hover:underline"
+                  className="text-zinc-700 hover:text-black hover:underline"
                   href={CONTACT.tiktokUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -138,13 +128,13 @@ export default function RootLayout({
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 border-t border-zinc-200/60 px-4 py-6 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <div className="flex flex-col gap-3 border-t border-black/10 px-4 py-6 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8">
             <div>© {new Date().getFullYear()} {BRAND}. All rights reserved.</div>
             <div className="flex gap-4">
-              <Link className="hover:text-zinc-900 hover:underline" href="/impressum">
+              <Link className="hover:text-black hover:underline" href="/impressum">
                 Impressum
               </Link>
-              <Link className="hover:text-zinc-900 hover:underline" href="/datenschutz">
+              <Link className="hover:text-black hover:underline" href="/datenschutz">
                 Datenschutzerklärung
               </Link>
             </div>
