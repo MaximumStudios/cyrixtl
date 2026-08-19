@@ -1,17 +1,21 @@
 "use client";
 
 import { useMemo, useRef } from "react";
+import Script from "next/script";
 
 export type FeaturedVideo = {
   title: string;
   url: string;
-  thumbnailUrl: string;
   tags?: string[];
 };
 
 type Props = {
   videos: FeaturedVideo[];
 };
+
+function extractVideoId(url: string): string | undefined {
+  return url.match(/\/video\/(\d+)/)?.[1];
+}
 
 export default function FeaturedVideosCarousel({ videos }: Props) {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
@@ -23,7 +27,7 @@ export default function FeaturedVideosCarousel({ videos }: Props) {
     if (!el) return;
 
     const card = el.querySelector<HTMLElement>("[data-card='video']");
-    const amount = (card?.offsetWidth ?? 320) + 24;
+    const amount = (card?.offsetWidth ?? 325) + 24;
 
     el.scrollBy({
       left: direction === "left" ? -amount : amount,
@@ -33,11 +37,13 @@ export default function FeaturedVideosCarousel({ videos }: Props) {
 
   return (
     <section className="mx-auto mt-4 max-w-5xl border-t border-black/10 py-12">
+      <Script src="https://www.tiktok.com/embed.js" strategy="lazyOnload" />
+
       <div className="flex items-end justify-between gap-4">
         <div>
           <h2 className="text-xl font-semibold tracking-tight">Featured videos</h2>
           <p className="mt-2 text-sm text-zinc-600">
-            Selected TikTok Shop posts (click to view).
+            Selected TikTok Shop posts.
           </p>
         </div>
 
@@ -69,45 +75,43 @@ export default function FeaturedVideosCarousel({ videos }: Props) {
         style={{ scrollSnapType: "x mandatory" }}
       >
         {videos.map((video, index) => (
-          <a
+          <div
             key={`${video.url}-${index}`}
-            href={video.url}
-            target="_blank"
-            rel="noreferrer"
             data-card="video"
-            className="group w-[220px] flex-none snap-start sm:w-[260px]"
-            aria-label={`Open video: ${video.title}`}
+            className="group relative w-[325px] flex-none snap-start"
           >
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl bg-zinc-100">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={video.thumbnailUrl}
-                alt={video.title}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0" />
-              <div className="absolute bottom-3 left-3 right-3">
-                <div className="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-black">
-                  View on TikTok
-                </div>
-              </div>
+            <div className="pointer-events-none absolute inset-x-0 top-2 z-10 flex justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-black/80 px-3 py-1 text-xs font-medium text-white">
+                ▶ Click to play
+              </span>
             </div>
 
-            <div className="mt-3">
-              <div className="text-sm font-semibold text-black">{video.title}</div>
-              {video.tags?.length ? (
-                <div className="mt-1.5 flex flex-wrap gap-x-2 text-xs text-zinc-500">
-                  {video.tags.slice(0, 3).map((tag, index) => (
-                    <span key={tag}>
-                      {tag}
-                      {index < Math.min(video.tags!.length, 3) - 1 ? " ·" : ""}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
+            <div className="origin-top transition-transform duration-300 group-hover:scale-[1.02]">
+              <blockquote
+                className="tiktok-embed"
+                cite={video.url}
+                data-video-id={extractVideoId(video.url)}
+                style={{ maxWidth: 605, minWidth: 325 }}
+              >
+                <section>
+                  <a target="_blank" rel="noreferrer" href={video.url}>
+                    {video.title}
+                  </a>
+                </section>
+              </blockquote>
             </div>
-          </a>
+
+            {video.tags?.length ? (
+              <div className="mt-2 flex flex-wrap gap-x-2 text-xs text-zinc-500">
+                {video.tags.slice(0, 3).map((tag, tagIndex) => (
+                  <span key={tag}>
+                    {tag}
+                    {tagIndex < Math.min(video.tags!.length, 3) - 1 ? " ·" : ""}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+          </div>
         ))}
       </div>
 

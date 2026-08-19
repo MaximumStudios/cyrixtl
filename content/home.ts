@@ -31,33 +31,15 @@ export const SERVICES_CREATORS = [
 
 export const FEATURED_VIDEOS: FeaturedVideo[] = [
   {
-    title: "XXXXXX (best post #1)",
-    url: "https://vm.tiktok.com/ZNRHM9UrK/",
-    thumbnailUrl: "https://placehold.co/720x1280/png",
-    tags: ["tiktok-shop", "demo"],
+    title: "Featured post 1",
+    url: "https://www.tiktok.com/@cyrixtl/video/7655243355491749153?is_from_webapp=1&sender_device=pc",
   },
   {
-    title: "XXXXXX (best post #2)",
-    url: "https://vm.tiktok.com/ZNRHMXJgs/",
-    thumbnailUrl: "https://placehold.co/720x1280/png",
-    tags: ["review"],
+    title: "Featured post 2",
+    url: "https://www.tiktok.com/@cyrixtl/video/7635372122004573473?is_from_webapp=1&sender_device=pc",
   },
   {
-    title: "XXXXXX (best post #3)",
-    url: "https://vm.tiktok.com/ZNRHMXJgs/",
-    thumbnailUrl: "https://placehold.co/720x1280/png",
-    tags: ["tiktok-shop", "demo"],
-  },
-  {
-    title: "XXXXXX (best post #4)",
-    url: "https://vm.tiktok.com/ZNRHMCKqm/",
-    thumbnailUrl: "https://placehold.co/720x1280/png",
-    tags: ["tiktok-shop", "demo"],
-  },
-  {
-    title: "XXXXXX (best post #5)",
-    url: "https://vm.tiktok.com/ZNRHM4exC/",
-    thumbnailUrl: "https://placehold.co/720x1280/png",
-    tags: ["tiktok-shop", "demo"],
+    title: "Featured post 3",
+    url: "https://www.tiktok.com/@cyrixtl/video/7617881269124222230?is_from_webapp=1&sender_device=pc",
   },
 ];
